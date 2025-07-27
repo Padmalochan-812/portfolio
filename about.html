@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00bfff;
+      --bg: #101c2c;
+      --bg-alt: #182842;
+      --text: #fff;
+      --accent: #ff4c8b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    nav {
+      width: 100%;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .nav-logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-right:10px;
+    }
+    .nav-logo span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-links a.active, .nav-links a:hover {
+      color: var(--primary);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .main-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 24px 24px;
+      min-height: 80vh;
+      gap: 24px;
+    }
+    .about-card {
+      background: var(--bg-alt);
+      border-radius: 18px;
+      padding: 40px 32px;
+      max-width: 700px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .about-card h1 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .about-card p {
+      font-size: 1.1rem;
+      color: #b0c4de;
+      margin-bottom: 18px;
+    }
+    .about-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 18px;
+      border: 4px solid #fff;
+      box-shadow: 0 0 24px 4px #1e90ff44;
+    }
+    footer {
+      background: var(--bg-alt);
+      color: #b0c4de;
+      text-align: center;
+      padding: 18px 0;
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) {
+      nav {
+        padding: 12px 8px;
+      }
+      .nav-links {
+        gap: 12px;
+        font-size: 1rem;
+      }
+      .about-card {
+        padding: 24px 8px;
+      }
+    }
+  </style>
+</head>
+<body class="about-card-body">
+  <nav>
+    <div class="nav-logo">Port<span>folio</span></div>
+    <div class="nav-links">
+      <a href="potfolio_1.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="cv.pdf" download class="download-btn" style="background: var(--accent); color: #fff; border: none; border-radius: 20px; padding: 8px 22px; font-weight: 600; font-size: 1rem; cursor: pointer;">Download CV</a>
+    </div>
+  </nav>
+    <main class="main-container">
+      <section class="about-hero-section">
+        <div class="about-card" id="about-card" style="will-change: transform; transition: box-shadow 0.3s, transform 0.3s;">
+          <img src="https://i.postimg.cc/RVJtjyLn/Whats-App-Image.jpg" alt="Profile" class="profile-img-animate" />
+          <h1 class="section-heading-animate">About Me</h1>
+          <h2 class="section-heading-animate" style="font-size:1.3rem; color:#b0c4de; margin-bottom:10px; font-weight:600;">Aspiring Web Developer & Computer Science Enthusiast</h2>
+          <p style="margin-bottom:14px;">I am Padmalochan Sahoo, a dedicated Computer Science student with a strong passion for web development and emerging technologies. With over 2 years of hands-on experience, I have successfully delivered 10+ projects, demonstrating a commitment to quality and innovation. I thrive in collaborative environments and am always eager to tackle new challenges and learn continuously.</p>
+          <ul style="text-align:left; display:inline-block; margin-bottom:18px; color:#b0c4de; font-size:1.05rem; line-height:1.7;">
+            <li>Proficient in modern web technologies (HTML, CSS, JavaScript)</li>
+            <li>Experience with AI concepts and software engineering principles</li>
+            <li>Strong problem-solving and analytical skills</li>
+            <li>Excellent communication and teamwork abilities</li>
+            <li>Driven by curiosity and a growth mindset</li>
+          </ul>
+          <p style="margin-bottom:0;">I am committed to delivering impactful solutions and contributing positively to every project I join.</p>
+        </div>
+      </section>
+      <section class="main-section">
+        <!-- Social Links & Contact -->
+        <div class="about-extras scroll-reveal">
+          <div style="margin-bottom:18px;">
+            <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn" style="margin:0 10px; color:var(--primary); font-size:1.7rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/" target="_blank" title="GitHub" style="margin:0 10px; color:var(--primary); font-size:1.7rem;"><i class="fab fa-github"></i></a>
+            <a href="mailto:your.email@example.com" title="Email" style="margin:0 10px; color:var(--primary); font-size:1.7rem;"><i class="fas fa-envelope"></i></a>
+          </div>
+          <a href="cv.pdf" download class="download-btn" style="background: var(--accent); color: #fff; border: none; border-radius: 20px; padding: 10px 28px; font-weight: 700; font-size: 1.1rem; cursor: pointer; margin-bottom:10px; display:inline-block;">Download CV</a>
+          <a href="contact.html" class="contact-btn" style="background: var(--primary); color: #fff; border: none; border-radius: 20px; padding: 10px 28px; font-weight: 700; font-size: 1.1rem; cursor: pointer; margin-left:12px; display:inline-block;">Contact Me</a>
+        </div>
+        <!-- Animated Stats -->
+        <div class="about-stats scroll-reveal stats-flex">
+          <div class="stat-card stat-animate" style="background:var(--bg-alt); border-radius:14px; padding:18px 32px; min-width:120px; box-shadow:0 2px 12px rgba(0,0,0,0.08); will-change: transform; transition: box-shadow 0.3s, transform 0.3s;">
+            <div style="font-size:2rem; color:var(--primary); font-weight:700;" class="stat-number" data-target="10">0</div>
+            <div style="color:#b0c4de; font-size:1rem;">Projects</div>
+          </div>
+          <div class="stat-card stat-animate" style="background:var(--bg-alt); border-radius:14px; padding:18px 32px; min-width:120px; box-shadow:0 2px 12px rgba(0,0,0,0.08); will-change: transform; transition: box-shadow 0.3s, transform 0.3s;">
+            <div style="font-size:2rem; color:var(--primary); font-weight:700;" class="stat-number" data-target="2">0</div>
+            <div style="color:#b0c4de; font-size:1rem;">Years Experience</div>
+          </div>
+          <div class="stat-card stat-animate" style="background:var(--bg-alt); border-radius:14px; padding:18px 32px; min-width:120px; box-shadow:0 2px 12px rgba(0,0,0,0.08); will-change: transform; transition: box-shadow 0.3s, transform 0.3s;">
+            <div style="font-size:2rem; color:var(--primary); font-weight:700;" class="stat-number" data-target="5">0</div>
+            <div style="color:#b0c4de; font-size:1rem;">Certifications</div>
+          </div>
+        </div>
+        <!-- Experience Timeline -->
+        <div class="about-timeline scroll-reveal timeline-animate">
+          <h2 style="color:var(--primary); font-size:1.4rem; margin-bottom:18px;">Experience & Education</h2>
+          <ul style="list-style:none; padding:0;">
+            <li style="margin-bottom:18px;">
+              <div style="font-weight:600; color:#fff;">Web Developer Intern <span style="color:var(--primary);">@ Tech Solutions</span></div>
+              <div style="color:#b0c4de; font-size:0.98rem;">June 2023 - Aug 2023</div>
+              <div style="color:#b0c4de;">Developed responsive websites and collaborated with cross-functional teams.</div>
+            </li>
+            <li style="margin-bottom:18px;">
+              <div style="font-weight:600; color:#fff;">B.Sc. Computer Science <span style="color:var(--primary);">@ XYZ University</span></div>
+              <div style="color:#b0c4de; font-size:0.98rem;">2021 - Present</div>
+              <div style="color:#b0c4de;">Focused on web technologies, AI, and software engineering.</div>
+            </li>
+          </ul>
+        </div>
+        <!-- Skills Progress Bars -->
+        <div class="about-skills scroll-reveal">
+          <h2 style="color:var(--primary); font-size:1.4rem; margin-bottom:18px;">Skills</h2>
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; color:#b0c4de; font-size:1rem;"><span>HTML/CSS</span><span>95%</span></div>
+            <div style="background:#22304a; border-radius:8px; overflow:hidden; height:12px;"><div class="skill-bar" style="width:95%; background:var(--primary); height:100%; transition:width 1.2s;"></div></div>
+          </div>
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; color:#b0c4de; font-size:1rem;"><span>JavaScript</span><span>85%</span></div>
+            <div style="background:#22304a; border-radius:8px; overflow:hidden; height:12px;"><div class="skill-bar" style="width:85%; background:var(--accent); height:100%; transition:width 1.2s;"></div></div>
+          </div>
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; color:#b0c4de; font-size:1rem;"><span>Python</span><span>80%</span></div>
+            <div style="background:#22304a; border-radius:8px; overflow:hidden; height:12px;"><div class="skill-bar" style="width:80%; background:#1e90ff; height:100%; transition:width 1.2s;"></div></div>
+          </div>
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; color:#b0c4de; font-size:1rem;"><span>React</span><span>70%</span></div>
+            <div style="background:#22304a; border-radius:8px; overflow:hidden; height:12px;"><div class="skill-bar" style="width:70%; background:#ff4c8b; height:100%; transition:width 1.2s;"></div></div>
+          </div>
+        </div>
+        <!-- Testimonials Carousel -->
+        <div class="about-testimonials scroll-reveal" id="testimonial-carousel">
+          <h2 class="section-heading-animate" style="color:var(--primary); font-size:1.4rem; margin-bottom:18px;">Testimonials</h2>
+          <div class="testimonial-slide active" style="background:var(--bg-alt); color:#b0c4de; border-left:4px solid var(--primary); padding:18px 24px; border-radius:10px; margin-bottom:16px; font-style:italic;">
+            “Padmalochan is a dedicated and creative developer. His attention to detail and problem-solving skills are outstanding.”<br><span style="color:#fff; font-weight:600;">– Mentor, Tech Solutions</span>
+          </div>
+          <div class="testimonial-slide" style="background:var(--bg-alt); color:#b0c4de; border-left:4px solid var(--primary); padding:18px 24px; border-radius:10px; font-style:italic; display:none;">
+            “A true team player who always delivers high-quality work on time.”<br><span style="color:#fff; font-weight:600;">– Project Lead</span>
+          </div>
+          <div style="text-align:center; margin-top:8px;">
+            <button class="testimonial-btn" id="prevTestimonial" style="background:none; border:none; color:var(--primary); font-size:1.5rem; cursor:pointer; margin:0 8px;">&#8592;</button>
+            <button class="testimonial-btn" id="nextTestimonial" style="background:none; border:none; color:var(--primary); font-size:1.5rem; cursor:pointer; margin:0 8px;">&#8594;</button>
+          </div>
+        </div>
+        <!-- Certifications -->
+        <div class="about-certifications scroll-reveal funfact-animate">
+          <h2 class="section-heading-animate" style="color:var(--primary); font-size:1.4rem; margin-bottom:18px;">Certifications</h2>
+          <ul style="list-style:none; padding:0; color:#b0c4de;">
+            <li style="margin-bottom:10px;"><i class="fas fa-certificate" style="color:var(--primary);"></i> Web Development Certification – Coursera</li>
+            <li style="margin-bottom:10px;"><i class="fas fa-certificate" style="color:var(--primary);"></i> Python for Everybody – edX</li>
+            <li style="margin-bottom:10px;"><i class="fas fa-certificate" style="color:var(--primary);"></i> JavaScript Algorithms – freeCodeCamp</li>
+          </ul>
+        </div>
+        <!-- Fun Facts -->
+        <div class="about-funfacts scroll-reveal funfact-animate">
+          <h2 class="section-heading-animate" style="color:var(--primary); font-size:1.4rem; margin-bottom:18px;">Fun Facts</h2>
+          <ul style="list-style:none; padding:0; color:#b0c4de;">
+            <li style="margin-bottom:10px;"><i class="fas fa-music" style="color:var(--accent);"></i> Plays guitar in free time</li>
+            <li style="margin-bottom:10px;"><i class="fas fa-plane" style="color:var(--accent);"></i> Loves to travel and explore new cultures</li>
+            <li style="margin-bottom:10px;"><i class="fas fa-brain" style="color:var(--accent);"></i> Enjoys solving logic puzzles</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      &copy; 2024 Padmalochan Sahoo. All rights reserved.
+    </footer>
+    <style>
+      .about-hero-section {
+        min-height: calc(100vh - 72px);
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0;
+        padding: 48px 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg);
+        box-sizing: border-box;
+      }
+      .about-card {
+        width: 100%;
+        max-width: 1000px;
+        min-height: 60vh;
+        margin: 0 auto;
+        background: var(--bg-alt);
+        border-radius: 8px;
+        padding: 64px 48px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 16px rgba(0,0,0,0.08);
+        border: 1.5px solid rgba(0,191,255,0.10);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .about-card img.profile-img-animate {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 18px;
+        border: 4px solid #fff;
+        box-shadow: 0 0 24px 4px #1e90ff44;
+      }
+      .main-container {
+        min-height: 100vh;
+        width: 100vw;
+        background: var(--bg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main-section {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        padding: 32px 16px 48px 16px;
+        box-sizing: border-box;
+      }
+      .about-extras {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 700px;
+        padding: 24px 0 0 0;
+      }
+      .about-stats.stats-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 32px;
+        width: 100%;
+        background: var(--bg-alt);
+        border-radius: 18px;
+        padding: 32px 24px;
+        box-sizing: border-box;
+      }
+      .stat-card {
+        flex: 1 1 200px;
+        margin: 0 8px;
+        min-width: 180px;
+        max-width: 260px;
+      }
+      .about-timeline, .about-skills, .about-testimonials, .about-certifications, .about-funfacts {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        background: var(--bg-alt);
+        border-radius: 18px;
+        padding: 32px 24px;
+        box-sizing: border-box;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      }
+      .about-timeline {
+        margin-top: 0;
+      }
+      .about-skills {
+        margin-top: 0;
+      }
+      .about-testimonials {
+        margin-top: 0;
+      }
+      .about-certifications {
+        margin-top: 0;
+      }
+      .about-funfacts {
+        margin-top: 0;
+      }
+      @media (max-width: 900px) {
+        .main-section {
+          max-width: 100vw;
+          padding: 24px 4vw 32px 4vw;
+        }
+        .about-timeline, .about-skills, .about-testimonials, .about-certifications, .about-funfacts, .about-extras {
+          max-width: 100vw;
+          padding: 24px 2vw;
+        }
+        .about-stats.stats-flex {
+          padding: 24px 2vw;
+        }
+        .about-card {
+          padding: 32px 8px;
+        }
+      }
+      @media (max-width: 600px) {
+        .about-hero-section {
+          min-height: calc(100vh - 56px);
+        }
+        .about-card {
+          padding: 18px 2vw;
+        }
+      }
+      @media (max-width: 1100px) {
+        .about-card {
+          max-width: 96vw;
+          padding: 40px 4vw;
+        }
+      }
+    </style>
+</body>
+</html> 

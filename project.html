@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00bfff;
+      --bg: #101c2c;
+      --bg-alt: #182842;
+      --text: #fff;
+      --accent: #ff4c8b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    nav {
+      width: 100%;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .nav-logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-right:10px;
+    }
+    .nav-logo span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-links a.active, .nav-links a:hover {
+      color: var(--primary);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .main-section {
+      padding: 120px 24px 24px 24px;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 32px;
+    }
+    .project-card {
+      background: var(--bg-alt);
+      border-radius: 16px;
+      padding: 24px 18px 18px 18px;
+      text-align: center;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(0,191,255,0.10);
+    }
+    .project-card img {
+      width: 100%;
+      max-width: 220px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    .project-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .project-card p {
+      color: #b0c4de;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .project-card a {
+      color: var(--accent);
+      text-decoration: underline;
+      font-size: 1rem;
+    }
+    footer {
+      background: var(--bg-alt);
+      color: #b0c4de;
+      text-align: center;
+      padding: 18px 0;
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) {
+      nav {
+        padding: 12px 8px;
+      }
+      .nav-links {
+        gap: 12px;
+        font-size: 1rem;
+      }
+      .projects-grid {
+        gap: 16px;
+      }
+      .project-card {
+        padding: 12px 4px 8px 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">Port<span>folio</span></div>
+    <div class="nav-links">
+      <a href="potfolio_1.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="project.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="cv.pdf" download class="download-btn" style="background: var(--accent); color: #fff; border: none; border-radius: 20px; padding: 8px 22px; font-weight: 600; font-size: 1rem; cursor: pointer;">Download CV</a>
+    </div>
+  </nav>
+  <section class="main-section">
+    <h1 style="font-size:2.2rem; color:var(--primary); margin-bottom:12px;">My Projects</h1>
+    <p style="color:#b0c4de; font-size:1.1rem; text-align:center; max-width:600px;">Here are some of the projects I have worked on. Each project showcases my skills and passion for building impactful solutions.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="p1.png" alt="Project 1" />
+        <h3>Portfolio Website</h3>
+        <p>A modern, responsive personal portfolio website to showcase my work and skills.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="p2.png" alt="Project 2" />
+        <h3>E-commerce Platform</h3>
+        <p>Developed a full-featured e-commerce platform with user authentication and payment integration.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="p3.png" alt="Project 3" />
+        <h3>Chat Application</h3>
+        <p>Real-time chat app using modern web technologies for seamless communication.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="p4.png" alt="Project 4" />
+        <h3>Task Manager</h3>
+        <p>Organize and track your tasks efficiently with this intuitive task manager app.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="p5.png" alt="Project 5" />
+        <h3>Blog Platform</h3>
+        <p>A blogging platform with markdown support and user-friendly interface.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="p6.png" alt="Project 6" />
+        <h3>Weather App</h3>
+        <p>Get real-time weather updates and forecasts for any location worldwide.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    &copy; 2024 Padmalochan Sahoo. All rights reserved.
+  </footer>
+</body>
+</html>

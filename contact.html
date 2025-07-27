@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00bfff;
+      --bg: #101c2c;
+      --bg-alt: #182842;
+      --text: #fff;
+      --accent: #ff4c8b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    nav {
+      width: 100%;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .nav-logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-right:10px;
+    }
+    .nav-logo span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-links a.active, .nav-links a:hover {
+      color: var(--primary);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .main-section {
+      padding: 120px 24px 24px 24px;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact-card {
+      background: var(--bg-alt);
+      border-radius: 18px;
+      padding: 40px 32px;
+      max-width: 500px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .contact-card h1 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .contact-card p {
+      font-size: 1.1rem;
+      color: #b0c4de;
+      margin-bottom: 18px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: none;
+    }
+    .contact-form button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 22px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .contact-form button:hover {
+      background: #0074d9;
+    }
+    .contact-info {
+      margin-top: 24px;
+      color: #b0c4de;
+      font-size: 1.1rem;
+    }
+    .socials {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+    .socials a {
+      color: var(--primary);
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+    .socials a:hover {
+      color: var(--accent);
+    }
+    .form-success {
+      color: var(--primary);
+      margin-top: 10px;
+      display: none;
+    }
+    footer {
+      background: var(--bg-alt);
+      color: #b0c4de;
+      text-align: center;
+      padding: 18px 0;
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) {
+      nav {
+        padding: 12px 8px;
+      }
+      .nav-links {
+        gap: 12px;
+        font-size: 1rem;
+      }
+      .contact-card {
+        padding: 24px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">Port<span>folio</span></div>
+    <div class="nav-links">
+      <a href="potfolio_1.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="cv.pdf" download class="download-btn" style="background: var(--accent); color: #fff; border: none; border-radius: 20px; padding: 8px 22px; font-weight: 600; font-size: 1rem; cursor: pointer;">Download CV</a>
+    </div>
+  </nav>
+  <section class="main-section">
+    <div class="contact-card">
+      <h1>Contact Me</h1>
+      <p>Feel free to reach out for collaborations, project inquiries, or just to say hello!</p>
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <div class="form-success" id="formSuccess">Thank you! Your message has been sent.</div>
+      </form>
+      <div class="contact-info">
+        <div><i class="fas fa-envelope"></i> <a href="mailto:your.email@example.com" style="color:var(--primary);">your.email@example.com</a></div>
+      </div>
+      <div class="socials">
+        <a href="https://www.facebook.com/share/1GKKQRpsED/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/Padmalochan-812"><i class="fab fa-github"></i></a>
+        <a href="www.linkedin.com/in/padmalochansahoo"><i class="fab fa-linkedin-in"></i></a>
+        <a href="www.youtube.com/@Virtual_Desk-94"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    &copy; 2024 Padmalochan Sahoo. All rights reserved.
+  </footer>
+  <script>
+    // Simple form success message (no backend)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('formSuccess').style.display = 'none';
+        document.getElementById('contactForm').reset();
+      }, 1800);
+    });
+  </script>
+</body>
+</html>
