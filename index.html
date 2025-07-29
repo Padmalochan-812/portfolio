@@ -2,273 +2,505 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Secret Love</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Your Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-      touch-action: none;
+    :root {
+      --primary: #00bfff;
+      --bg: #101c2c;
+      --bg-alt: #182842;
+      --text: #fff;
+      --accent: #ff4c8b;
     }
-
-    .container {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 20px;
-      text-align: center;
-      max-width: 90%;
-      width: 90%;
-      margin: 20px auto;
-      animation: fadeIn 2s ease-in-out;
-      position: relative;
-      z-index: 2;
-      border: 2px solid #ff4081;
-      box-shadow: 0 0 20px #ff80ab;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    body.light-mode {
+      background: #f5f7fa;
+      color: #1a1a1a;
     }
-
-    h1 {
-      color: #e91e63;
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      font-family: 'Pacifico', cursive;
+    body.light-mode .intro h2 {
+      color: #2a2a2a;
     }
-
-    input[type="text"] {
-      padding: 10px;
+    body.light-mode .intro h1 {
+      color: #111;
+    }
+    body.light-mode .intro h1 span {
+      color: #0074d9;
+    }
+    body.light-mode .typing {
+      color: #0074d9;
+    }
+    body.light-mode .intro p {
+      color: #222;
+    }
+    body.light-mode .stat strong {
+      color: #0074d9;
+    }
+    body.light-mode .stat span {
+      color: #444;
+    }
+    body.light-mode .nav-links a {
+      color: #1a1a1a;
+    }
+    body.light-mode .nav-links a.active,
+    body.light-mode .nav-links a:hover {
+      color: #0074d9;
+    }
+    body.light-mode .download-btn {
+      background: #ff4c8b;
+      color: #fff;
+    }
+    body.light-mode .cta-btns button {
+      color: #0074d9;
+      border-color: #0074d9;
+    }
+    body.light-mode .cta-btns button:hover {
+      background: #0074d9;
+      color: #fff;
+    }
+    body.light-mode .socials a {
+      color: #0074d9;
+    }
+    body.light-mode .socials a:hover {
+      color: #ff4c8b;
+    }
+    nav {
       width: 100%;
-      border: 2px solid #f48fb1;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      font-size: 1rem;
-    }
-
-    button {
-      background: #e91e63;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    button:hover {
-      background: #c2185b;
-      transform: scale(1.05);
-    }
-
-    .message {
-      margin-top: 20px;
-      color: #4a148c;
-      font-weight: bold;
-      display: none;
-      animation: popIn 1s ease-in-out;
-      font-size: 1rem;
-    }
-
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .big-heart {
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(1);
-      font-size: 100px;
-      color: rgba(255, 105, 180, 0.4);
-      animation: beat 2s infinite ease-in-out;
-      pointer-events: none;
-      z-index: 0;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
-
-    @keyframes beat {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); }
-      50% { transform: translate(-50%, -50%) scale(1.1); }
+    .nav-logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-right:10px;
     }
-
-    .slideshow {
-      display: none;
-      position: fixed;
-      bottom: 2%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      height: auto;
-      z-index: 1;
-      perspective: 1500px;
-      pointer-events: none;
+    .nav-logo span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
     }
-
-    .rotating-container {
-      width: 260px;
-      height: 180px;
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
       position: relative;
-      transform-style: preserve-3d;
-      margin: auto;
+      transition: color 0.2s;
     }
-
-    .slide {
+    .nav-links a.active, .nav-links a:hover {
+      color: var(--primary);
+    }
+    .nav-links a.active::after, .nav-links a:hover::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
       position: absolute;
-      width: 160px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 10px;
-      transform-style: preserve-3d;
-      transform-origin: center center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      left: 0;
+      bottom: -4px;
     }
-
-    @media (max-width: 480px) {
-      .slide {
-        width: 120px;
-        height: 80px;
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .toggle-mode {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-size: 1.3rem;
+      cursor: pointer;
+      margin-right: 8px;
+      margin-left: 12px;
+    }
+    .download-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 22px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .download-btn:hover {
+      background: #ff2670;
+    }
+    .main-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 120px 48px 24px 48px;
+      min-height: 80vh;
+      gap: 0px;
+    }
+    .tit{
+      display: flex;
+      gap: 8px;
+      
+    }
+    .profile-img-glow {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+      
+    }
+    .profile-img-glow img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      z-index: 2;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 0 48px 12px #1e90ff88, 0 2px 8px 0 rgba(0,0,0,0.10);
+      background: #fff;
+    }
+    .intro {
+      max-width: 520px;
+      /**margin-left: 200px;**/
+    }
+    .intro h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #b0c4de;
+      margin-bottom: 8px;
+    }
+    .intro h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .intro h1 span {
+      color: var(--primary);
+    }
+    .typing {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.3rem;
+      min-height: 1.5em;
+      display: inline-block;
+    }
+    .intro p {
+      color: #b0c4de;
+      margin: 18px 0 18px 0;
+      font-size: 1.05rem;
+    }
+    .socials {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .socials a {
+      color: var(--primary);
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+    .socials a:hover {
+      color: var(--accent);
+    }
+    .cta-btns {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .cta-btns button {
+      background: none;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      border-radius: 20px;
+      padding: 8px 22px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .cta-btns button:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-alt);
+      border-radius: 18px;
+      margin: 16px 48px 0 48px;
+      padding: 32px 0;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      gap: 10px;
+    }
+    .stat {
+      text-align: center;
+      flex: 1;
+    }
+    .stat strong {
+      font-size: 2rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .stat span {
+      display: block;
+      color: #b0c4de;
+      font-size: 1.05rem;
+      margin-top: 4px;
+    }
+    @media (max-width: 900px) {
+      .main-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 120px 16px 12px 16px;
+      }
+      .intro {
+        margin-left: 0;
+        text-align: center;
+      }
+      .stats {
+        flex-direction: column;
+        gap: 24px;
+        margin: 12px 16px 0 16px;
+        padding: 24px 0;
       }
     }
-
-    .share-btn {
-      margin-top: 15px;
-      background: #ff4081;
-      color: #fff;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      font-size: 0.9rem;
-    }
-
-    .heart-fall {
-      position: fixed;
-      top: -50px;
-      font-size: 24px;
-      animation: fall 4s linear infinite;
-      color: #ff69b4;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    @media (max-width: 600px) {
+      nav {
+        padding: 12px 8px;
+      }
+      .hamburger {
+        display: block !important;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        background: var(--bg-alt);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        z-index: 1000;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-links a {
+        width: 100%;
+        padding: 16px 24px;
+        border-bottom: 1px solid #223355;
+        font-size: 1.1rem;
+      }
+      .nav-actions {
+        z-index: 1100;
+      }
     }
   </style>
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="background.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <div class="container">
-    <h1>Send a Secret Love</h1>
-    <input type="text" id="crushName" placeholder="Enter your crush's name...">
-    <button onclick="revealLove()">Send Secret</button>
-    <div class="message" id="message"></div>
-    <button class="share-btn" onclick="shareLove()">📩 Share Your Love</button>
+  <nav>
+    <div class="nav-logo">Port<span>folio</span></div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation" style="display:none; background:none; border:none; font-size:2rem; color:var(--primary); cursor:pointer; margin-right:12px;">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="toggle-mode" title="Toggle dark/light mode"><i class="fa-solid fa-moon"></i></button>
+      <a href="cv.pdf" download class="download-btn">Download CV</a>
+    </div>
+  </nav>
+  <section class="main-section" id="home">
+    <div class="profile-img-glow" style="position: relative;">
+        <img src="https://i.postimg.cc/RVJtjyLn/Whats-App-Image.jpg" alt="Profile" />
+     </div>
+    <div class="intro">
+      <h2>Hello, I'm</h2>
+      <h1>Padmalochan <span>Sahoo</span></h1>
+      <div class = "tit">
+        <h2 > And I'm a </h2>
+        <div class="typing" id="typing"></div>
+      </div>
+      <p>I am a passionate and dedicated final year Computer Science student at Dr. Meghnad Saha Institute of Technology. I love building creative solutions and exploring new technologies. My interests include web development, artificial intelligence, and software engineering.</p>
+      <div class="socials">
+        <a href="https://www.facebook.com/share/1GKKQRpsED/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/Padmalochan-812"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/padmalochansahoo"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@Virtual_Desk-94"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="cta-btns">
+        <button id="hireMeBtn">Hire Me</button>
+        <button id="contactMeBtn">Contact Me</button>
+      </div>
+    </div>
+  </section>
+  <section class="stats">
+    <div class="stat">
+      <strong>2+</strong>
+      <span>Years of experience</span>
+    </div>
+    <div class="stat">
+      <strong>10+</strong>
+      <span>Projects completed</span>
+    </div>
+    <div class="stat">
+      <strong>5+</strong>
+      <span>Technologies mastered</span>
+    </div>
+    <div class="stat">
+      <strong>100+</strong>
+      <span>Satisfied Clients</span>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  
+  <!-- Modal Contact Form -->
+  <div id="contactModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+    <div style="background:var(--bg); color:var(--text); padding:32px 24px 24px 24px; border-radius:16px; min-width:320px; max-width:90vw; position:relative; box-shadow:0 4px 32px rgba(0,0,0,0.2);">
+      <button id="closeModalBtn" style="position:absolute; top:12px; right:16px; background:none; border:none; color:var(--accent); font-size:1.5rem; cursor:pointer;">&times;</button>
+      <h2 style="margin-bottom:18px;">Contact Form</h2>
+      <form id="contactForm" autocomplete="off">
+        <div style="margin-bottom:12px; text-align:left;">
+          <label for="name" style="display:block; margin-bottom:4px;">Name</label>
+          <input type="text" id="name" name="name" required style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc;">
+        </div>
+        <div style="margin-bottom:12px; text-align:left;">
+          <label for="email" style="display:block; margin-bottom:4px;">Email</label>
+          <input type="email" id="email" name="email" required style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc;">
+        </div>
+        <div style="margin-bottom:16px; text-align:left;">
+          <label for="message" style="display:block; margin-bottom:4px;">Message</label>
+          <textarea id="message" name="message" rows="4" required style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc;"></textarea>
+        </div>
+        <button type="submit" style="background:var(--primary); color:#fff; border:none; border-radius:20px; padding:8px 22px; font-weight:600; font-size:1rem; cursor:pointer;">Send</button>
+      </form>
+      <div id="formSuccess" style="display:none; color:var(--primary); margin-top:12px; text-align:center;">Thank you! Your message has been sent.</div>
+    </div>
   </div>
-
-  <div class="big-heart">❤️</div>
-
-  <div class="slideshow" id="slideshow">
-    <div class="rotating-container" id="rotator"></div>
-  </div>
-
   <script>
-    const images = [
-      'p1.png', 'p2.png', 'p3.png', 'p4.png', 'p5.png',
-      'p6.png', 'p7.png', 'p8.png', 'p9.png', 'p10.png'
-    ];
-
-    const container = document.getElementById("rotator");
-    let angle = 0;
-    let autoRotate = true;
-
-    function revealLove() {
-      const name = document.getElementById("crushName").value;
-      const msg = document.getElementById("message");
-      if (!name) return alert("Please enter a name!");
-
-      msg.textContent = `Hey ${name}, someone secretly loves you ❤️`;
-      msg.style.display = 'block';
-
-      const slideShow = document.getElementById("slideshow");
-      slideShow.style.display = 'flex';
-
-      container.innerHTML = "";
-
-      images.forEach((src, i) => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.className = "slide";
-        const theta = (360 / images.length) * i;
-        img.style.transform = `rotateY(${theta}deg) translateZ(300px)`;
-        container.appendChild(img);
-      });
-
-      animateRotation();
-      generateHearts();
-    }
-
-    function animateRotation() {
-      const update = () => {
-        if (autoRotate) angle += 0.3;
-        container.style.transform = `rotateY(${angle}deg)`;
-        requestAnimationFrame(update);
-      }
-      update();
-    }
-
-    let startX;
-    container.addEventListener("touchstart", e => {
-      autoRotate = false;
-      startX = e.touches[0].clientX;
-    });
-
-    container.addEventListener("touchmove", e => {
-      const moveX = e.touches[0].clientX;
-      angle += (moveX - startX) * 0.2;
-      startX = moveX;
-      container.style.transform = `rotateY(${angle}deg)`;
-    });
-
-    container.addEventListener("touchend", () => {
-      autoRotate = true;
-    });
-
-    function shareLove() {
-      if (navigator.share) {
-        navigator.share({
-          title: 'Secret Love ❤️',
-          text: 'Someone has a secret crush on you! Check out this sweet surprise 💌',
-          url: window.location.href
-        }).catch(console.error);
+    // Typing effect for job title
+    const typingElement = document.getElementById('typing');
+    const roles = [" Web Developer", " UI/UX Designer", " Freelancer", " Tech Enthusiast"];
+    let roleIndex = 0, charIndex = 0, isDeleting = false;
+    function type() {
+      const currentRole = roles[roleIndex];
+      if (isDeleting) {
+        typingElement.textContent = currentRole.substring(0, charIndex--);
+        if (charIndex < 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(type, 600);
+        } else {
+          setTimeout(type, 60);
+        }
       } else {
-        alert("Sharing is not supported in your browser. Try copying the link manually.");
+        typingElement.textContent = currentRole.substring(0, charIndex++);
+        if (charIndex > currentRole.length) {
+          isDeleting = true;
+          setTimeout(type, 1200);
+        } else {
+          setTimeout(type, 100);
+        }
       }
     }
-
-    function generateHearts() {
-      for (let i = 0; i < 20; i++) {
-        const heart = document.createElement("div");
-        heart.className = "heart-fall";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDelay = Math.random() * 5 + "s";
-        heart.textContent = "💖";
-        document.body.appendChild(heart);
+    type();
+    // Navigation active link effect
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        // On mobile, close nav after click
+        if (window.innerWidth <= 600) {
+          document.getElementById('navLinks').classList.remove('show');
+        }
+      });
+    });
+    // Hamburger menu logic
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinksDiv = document.getElementById('navLinks');
+    hamburgerBtn.addEventListener('click', function() {
+      navLinksDiv.classList.toggle('show');
+    });
+    // Hide nav links when resizing to desktop
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 600) {
+        navLinksDiv.classList.remove('show');
       }
-    }
+    });
+    // Dark/Light mode toggle
+    const toggleBtn = document.querySelector('.toggle-mode');
+    let darkMode = true;
+    toggleBtn.addEventListener('click', () => {
+      darkMode = !darkMode;
+      document.body.style.background = darkMode ? 'var(--bg)' : '#f5f7fa';
+      document.body.style.color = darkMode ? 'var(--text)' : '#222';
+      toggleBtn.innerHTML = darkMode ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+    });
+    // Modal contact form logic
+    const contactModal = document.getElementById('contactModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    document.getElementById('hireMeBtn').addEventListener('click', function() {
+      contactModal.style.display = 'flex';
+    });
+    document.getElementById('contactMeBtn').addEventListener('click', function() {
+      contactModal.style.display = 'flex';
+    });
+    closeModalBtn.addEventListener('click', function() {
+      contactModal.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'none';
+      document.getElementById('contactForm').reset();
+    });
+    // Close modal when clicking outside the form
+    contactModal.addEventListener('click', function(e) {
+      if (e.target === contactModal) {
+        contactModal.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'none';
+        document.getElementById('contactForm').reset();
+      }
+    });
+    // Form submit (just show success message for now)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').style.display = 'block';
+      setTimeout(() => {
+        contactModal.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'none';
+        document.getElementById('contactForm').reset();
+      }, 1800);
+    });
   </script>
 </body>
 </html>
