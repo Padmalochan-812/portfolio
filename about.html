@@ -389,6 +389,40 @@
           padding: 40px 4vw;
         }
       }
+
+      @media (max-width: 600px) {
+      nav {
+        padding: 12px 8px;
+      }
+      .hamburger {
+        display: block !important;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        background: var(--bg-alt);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        z-index: 1000;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-links a {
+        width: 100%;
+        padding: 16px 24px;
+        border-bottom: 1px solid #223355;
+        font-size: 1.1rem;
+      }
+      .nav-actions {
+        z-index: 1100;
+      }
+    }
     </style>
 </body>
 </html> 
